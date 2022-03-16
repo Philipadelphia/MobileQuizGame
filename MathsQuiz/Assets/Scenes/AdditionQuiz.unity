@@ -583,7 +583,6 @@ RectTransform:
   - {fileID: 217496813}
   - {fileID: 1125060563}
   - {fileID: 1689803863}
-  - {fileID: 857007036}
   m_Father: {fileID: 732471201}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -635,7 +634,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 419761331}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1373264890}
+        m_TargetAssemblyTypeName: AnswerButtons, Assembly-CSharp
+        m_MethodName: Answer2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &419761331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1108,6 +1119,7 @@ RectTransform:
   m_Children:
   - {fileID: 1758461218}
   - {fileID: 419761329}
+  - {fileID: 857007036}
   - {fileID: 1563417985}
   m_Father: {fileID: 1784810610}
   m_RootOrder: 2
@@ -1264,12 +1276,12 @@ RectTransform:
   - {fileID: 1977318864}
   - {fileID: 1917783198}
   - {fileID: 632380317}
-  m_Father: {fileID: 419761329}
-  m_RootOrder: 3
+  m_Father: {fileID: 732471201}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -373.75, y: -290.45703}
+  m_AnchoredPosition: {x: -191.6076, y: -143.74184}
   m_SizeDelta: {x: 332.6574, y: 251.0858}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &857007037
@@ -1315,7 +1327,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 857007038}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1373264890}
+        m_TargetAssemblyTypeName: AnswerButtons, Assembly-CSharp
+        m_MethodName: Answer3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &857007038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1808,6 +1832,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1373264888}
   - component: {fileID: 1373264887}
+  - component: {fileID: 1373264889}
+  - component: {fileID: 1373264890}
   m_Layer: 0
   m_Name: QuizController
   m_TagString: Untagged
@@ -1847,6 +1873,42 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1373264889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373264886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd5804c4b84594847a1d1531725ab569, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1373264890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373264886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49f96df2063f0d43a94ec3b053999cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  answer1BackGreen: {fileID: 2141828154}
+  answer1BackRed: {fileID: 140578541}
+  answer2BackGreen: {fileID: 217496812}
+  answer2BackRed: {fileID: 1125060562}
+  answer3BackGreen: {fileID: 1977318863}
+  answer3BackRed: {fileID: 1917783197}
+  answer4BackGreen: {fileID: 1509465084}
+  answer4BackRed: {fileID: 702400654}
+  answer1: {fileID: 1758461217}
+  answer2: {fileID: 419761328}
+  answer3: {fileID: 857007035}
+  answer4: {fileID: 1563417984}
 --- !u!1 &1484965002
 GameObject:
   m_ObjectHideFlags: 0
@@ -2090,7 +2152,7 @@ RectTransform:
   - {fileID: 702400655}
   - {fileID: 1922761684}
   m_Father: {fileID: 732471201}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2140,7 +2202,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1563417987}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1373264890}
+        m_TargetAssemblyTypeName: AnswerButtons, Assembly-CSharp
+        m_MethodName: Answer4
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1563417987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2397,7 +2471,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1758461220}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1373264890}
+        m_TargetAssemblyTypeName: AnswerButtons, Assembly-CSharp
+        m_MethodName: Answer1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1758461220
 MonoBehaviour:
   m_ObjectHideFlags: 0

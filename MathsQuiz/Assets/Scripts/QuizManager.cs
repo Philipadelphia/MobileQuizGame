@@ -7,10 +7,11 @@ using TMPro;
 public class QuizManager : MonoBehaviour
 {
 
-    private float firstNumber;
-    private float secondNumber;
-    private float answer;
-    private int QuestionCounter;
+    public static string newQuestion;
+    public static string newA1;
+    public static string newA2;
+    public static string newA3;
+    public static string newA4;
 
     public GameObject QuestionCounterText;
     public GameObject Question;
@@ -22,13 +23,18 @@ public class QuizManager : MonoBehaviour
     // Update is called once per frame
     void Start()
     {
-        Question.GetComponent<TMP_Text>().text = "Hello World";
-        Answer1.GetComponent<TMP_Text>().text = "Hi";
+        StartCoroutine(PushTextOnScreen());
+
     }
         
 
-    float GetAnswer()
+    IEnumerator PushTextOnScreen()
     {
-        return answer;
+        yield return new WaitForSeconds(0.25f);
+        Question.GetComponent<TMP_Text>().text = newQuestion;
+        Answer1.GetComponent<TMP_Text>().text = newA1;
+        Answer2.GetComponent<TMP_Text>().text = newA2;
+        Answer3.GetComponent<TMP_Text>().text = newA3;
+        Answer4.GetComponent<TMP_Text>().text = newA4;
     }
 }

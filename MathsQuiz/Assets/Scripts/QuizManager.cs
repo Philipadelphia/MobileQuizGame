@@ -19,11 +19,16 @@ public class QuizManager : MonoBehaviour
     public GameObject Answer2;
     public GameObject Answer3;
     public GameObject Answer4;
+    public static bool updateQuestion = false;
 
     // Update is called once per frame
-    void Start()
+    void Update()
     {
-        StartCoroutine(PushTextOnScreen());
+        if (updateQuestion == false)
+        {
+            StartCoroutine(PushTextOnScreen());
+            updateQuestion = true;
+        }
 
     }
         
@@ -32,6 +37,7 @@ public class QuizManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.25f);
         Question.GetComponent<TMP_Text>().text = newQuestion;
+        QuestionCounterText.GetComponent<TMP_Text>().text = "Question: " + QuestionGenerator.questionNumber.ToString() + "/10";
         Answer1.GetComponent<TMP_Text>().text = newA1;
         Answer2.GetComponent<TMP_Text>().text = newA2;
         Answer3.GetComponent<TMP_Text>().text = newA3;

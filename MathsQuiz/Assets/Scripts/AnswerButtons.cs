@@ -2,12 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class AnswerButtons : MonoBehaviour
 {
 
     public GameObject questionMenu;
     public GameObject scoreMenu;
+
+    public GameObject scoreText;
+    public GameObject correctText;
+    public GameObject timeText;
 
     public GameObject answer1BackGreen;
     public GameObject answer1BackRed;
@@ -27,6 +32,7 @@ public class AnswerButtons : MonoBehaviour
     public GameObject answer4;
 
     public int scoreValue = 0;
+    public int correctAnswers = 0;
 
     public void Answer1()
     {
@@ -34,6 +40,7 @@ public class AnswerButtons : MonoBehaviour
         {
             answer1BackGreen.SetActive(true);
             scoreValue += 10;
+            correctAnswers += 1;
         }
         else
         {
@@ -51,6 +58,7 @@ public class AnswerButtons : MonoBehaviour
         {
             answer2BackGreen.SetActive(true);
             scoreValue += 10;
+            correctAnswers += 1;
         }
         else
         {
@@ -68,6 +76,7 @@ public class AnswerButtons : MonoBehaviour
         {
             answer3BackGreen.SetActive(true);
             scoreValue += 10;
+            correctAnswers += 1;
         }
         else
         {
@@ -85,6 +94,7 @@ public class AnswerButtons : MonoBehaviour
         {
             answer4BackGreen.SetActive(true);
             scoreValue += 10;
+            correctAnswers += 1;
         }
         else
         {
@@ -121,8 +131,16 @@ public class AnswerButtons : MonoBehaviour
 
         if (QuestionGenerator.questionNumber == 10)
         {
+            Timer.startTimer = false;
             questionMenu.SetActive(false);
             scoreMenu.SetActive(true);
+            float overallScore = scoreValue * Timer.timeStart / 2;  // Make sure to add time elements (Would be pog)
+            scoreText.GetComponent<TMP_Text>().text = "Score: " + overallScore.ToString("F0");
+            correctText.GetComponent<TMP_Text>().text = "Correct: " + correctAnswers.ToString();
+            timeText.GetComponent<TMP_Text>().text = "Time: " + Timer.timeStart.ToString("F2");
+            QuestionGenerator.questionNumber = 0;
+            Timer.timeStart = 0;
+            QuizManager.updateQuestion = false;
         }
     }
 }

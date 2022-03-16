@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class QuestionGenerator : MonoBehaviour
 {
@@ -18,7 +19,34 @@ public class QuestionGenerator : MonoBehaviour
     public static string choice3;
     public static string choice4;
     public static int correctAnswer;
+    public static string quizType;
 
+    void Start()
+    {
+        Timer.startTimer = true;
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+        if (sceneName == "AdditionQuiz")
+        {
+            quizType = "ADD";
+        }
+        else if (sceneName == "SubtractionQuiz")
+        {
+            quizType = "SUB";
+        }
+        else if (sceneName == "DivisionQuiz")
+        {
+            quizType = "DIV";
+        }
+        else if (sceneName == "MultiplicationQuiz")
+        {
+            quizType = "MUL";
+        }
+        else if (sceneName == "MixedQuiz")
+        {
+            quizType = "MIX";
+        }
+    }
 
     void Update()
     {
@@ -29,7 +57,26 @@ public class QuestionGenerator : MonoBehaviour
             correctAnswer = Random.Range(1, 5);
 
             if (correctAnswer == 1) {
-                GenerateQuestionADD();
+                if (quizType == "ADD")
+                {
+                    GenerateQuestionADD();
+                }
+                else if (quizType == "SUB") 
+                {
+                    GenerateQuestionSUB();
+                }
+                else if (quizType == "DIV")
+                {
+                    GenerateQuestionDIV();
+                }
+                else if (quizType == "MUL")
+                {
+                    GenerateQuestionMUL();
+                }
+                else if (quizType == "MIX")
+                {
+                    GenerateQuestionADD();
+                }
                 QuizManager.newQuestion = question;
                 QuizManager.newA1 = choice1;
                 QuizManager.newA2 = choice2;
@@ -39,7 +86,26 @@ public class QuestionGenerator : MonoBehaviour
             }
             else if (correctAnswer == 2)
             {
-                GenerateQuestionADD();
+                if (quizType == "ADD")
+                {
+                    GenerateQuestionADD();
+                }
+                else if (quizType == "SUB")
+                {
+                    GenerateQuestionSUB();
+                }
+                else if (quizType == "DIV")
+                {
+                    GenerateQuestionDIV();
+                }
+                else if (quizType == "MUL")
+                {
+                    GenerateQuestionMUL();
+                }
+                else if (quizType == "MIX")
+                {
+                    GenerateQuestionSUB();
+                }
                 QuizManager.newQuestion = question;
                 QuizManager.newA1 = choice2;
                 QuizManager.newA2 = choice1;
@@ -49,7 +115,26 @@ public class QuestionGenerator : MonoBehaviour
             }
             else if (correctAnswer == 3)
             {
-                GenerateQuestionADD();
+                if (quizType == "ADD")
+                {
+                    GenerateQuestionADD();
+                }
+                else if (quizType == "SUB")
+                {
+                    GenerateQuestionSUB();
+                }
+                else if (quizType == "DIV")
+                {
+                    GenerateQuestionDIV();
+                }
+                else if (quizType == "MUL")
+                {
+                    GenerateQuestionMUL();
+                }
+                else if (quizType == "MIX")
+                {
+                    GenerateQuestionDIV();
+                }
                 QuizManager.newQuestion = question;
                 QuizManager.newA1 = choice3;
                 QuizManager.newA2 = choice2;
@@ -59,7 +144,26 @@ public class QuestionGenerator : MonoBehaviour
             }
             else if (correctAnswer == 4)
             {
-                GenerateQuestionADD();
+                if (quizType == "ADD")
+                {
+                    GenerateQuestionADD();
+                }
+                else if (quizType == "SUB")
+                {
+                    GenerateQuestionSUB();
+                }
+                else if (quizType == "DIV")
+                {
+                    GenerateQuestionDIV();
+                }
+                else if (quizType == "MUL")
+                {
+                    GenerateQuestionMUL();
+                }
+                else if (quizType == "MIX")
+                {
+                    GenerateQuestionMUL();
+                }
                 QuizManager.newQuestion = question;
                 QuizManager.newA1 = choice4;
                 QuizManager.newA2 = choice2;
@@ -83,5 +187,40 @@ public class QuestionGenerator : MonoBehaviour
         choice3 = (answer-2).ToString();
         choice4 = (answer+4).ToString();
     }
-    
+
+    public static void GenerateQuestionSUB()
+    {
+        randomInt1 = Random.Range(1, 10);
+        randomInt2 = Random.Range(1, 10);
+        answer = randomInt1 - randomInt2;
+        question = randomInt1.ToString() + " - " + randomInt2.ToString();
+        choice1 = answer.ToString();
+        choice2 = (answer + 1).ToString();
+        choice3 = (answer - 2).ToString();
+        choice4 = (answer + 4).ToString();
+    }
+
+    public static void GenerateQuestionDIV()
+    {
+        randomInt1 = Random.Range(1, 100);
+        randomInt2 = Random.Range(1, 10);
+        answer = randomInt1 / randomInt2;
+        question = randomInt1.ToString() + " / " + randomInt2.ToString();
+        choice1 = answer.ToString();
+        choice2 = (answer + 1).ToString();
+        choice3 = (answer - 2).ToString();
+        choice4 = (answer + 4).ToString();
+    }
+
+    public static void GenerateQuestionMUL()
+    {
+        randomInt1 = Random.Range(1, 10);
+        randomInt2 = Random.Range(1, 10);
+        answer = randomInt1 * randomInt2;
+        question = randomInt1.ToString() + " * " + randomInt2.ToString();
+        choice1 = answer.ToString();
+        choice2 = (answer + 1).ToString();
+        choice3 = (answer - 2).ToString();
+        choice4 = (answer + 4).ToString();
+    }
 }

@@ -14,4 +14,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AdditionQuiz.unity
     guid: 6ed526d3a1e388943bba83b446f4690a
+  - enabled: 1
+    path: Assets/Scenes/DivisionQuiz.unity
+    guid: 4dc5d7f8b54cb7043a66c76842784f1d
+  - enabled: 1
+    path: Assets/Scenes/MixedQuiz.unity
+    guid: 6363cdda9389fd249939ec855d2be5ca
+  - enabled: 1
+    path: Assets/Scenes/MultiplicationQuiz.unity
+    guid: 82ce26a6f45fd6a49adfa41578589f13
+  - enabled: 1
+    path: Assets/Scenes/SubtractionQuiz.unity
+    guid: 1ba0a7fc0e77c884e96569e2acbb8797
   m_configObjects: {}

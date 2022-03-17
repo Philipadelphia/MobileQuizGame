@@ -134,7 +134,7 @@ public class AnswerButtons : MonoBehaviour
             Timer.startTimer = false;
             questionMenu.SetActive(false);
             scoreMenu.SetActive(true);
-            float overallScore = scoreValue * Timer.timeStart / 2;  // Make sure to add time elements (Would be pog)
+            float overallScore = (scoreValue * 100) / (Timer.timeStart / 2);
             scoreText.GetComponent<TMP_Text>().text = "Score: " + overallScore.ToString("F0");
             correctText.GetComponent<TMP_Text>().text = "Correct: " + correctAnswers.ToString();
             timeText.GetComponent<TMP_Text>().text = "Time: " + Timer.timeStart.ToString("F2");
